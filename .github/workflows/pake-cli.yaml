@@ -17,10 +17,10 @@ on:
           - "macos-latest"
           - "ubuntu-24.04"
       url:
-        description: "Website URL"
+        description: "https://weibo.com"
         required: true
       name:
-        description: "App name (lowercase for Linux)"
+        description: "weibo"
         required: true
       icon:
         description: "Icon URL, auto-fetch if empty"
