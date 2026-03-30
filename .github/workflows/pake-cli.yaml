@@ -55,8 +55,6 @@ on:
 
 jobs:
   build:
-    name: ${{ inputs.platform }}
-    runs-on: ${{ inputs.platform }}
     strategy:
       matrix:
         os: [macos-latest, windows-latest]
