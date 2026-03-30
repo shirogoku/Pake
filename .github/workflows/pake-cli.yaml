@@ -151,6 +151,8 @@ jobs:
             $args += "--hide-title-bar"
           }
 
+          $args += "--bundles", "nsis"
+          
           Write-Host "Running: node dist/cli.js $($args -join ' ')"
           node dist/cli.js $args
 
@@ -181,14 +183,18 @@ jobs:
           path: ${{ inputs.name }}.AppImage
           retention-days: 3
           if-no-files-found: ignore
-
-      - name: Upload MSI (Windows)
+             
+      - name: Upload Windows App
         if: runner.os == 'Windows'
         uses: actions/upload-artifact@v6
         with:
           name: ${{ inputs.name }}-Windows
-          path: ${{ inputs.name }}.msi
+          path: |
+            *.exe
+            *.nsis
+            **/*.exe
           retention-days: 3
+          if-no-files-found: error
 
       - name: Rust cache store
         uses: actions/cache/save@v4.2.0
