@@ -7,23 +7,16 @@ env:
 on:
   workflow_dispatch:
     inputs:
-      platform:
-        description: "Platform"
-        required: true
-        default: "macos-latest"
-        type: choice
-        options:
-          - "windows-latest"
-          - "macos-latest"
-          - "ubuntu-24.04"
       url:
         description: "Website URL"
         required: true
+        default: "https://weibo.com"
       name:
-        description: "App name (lowercase for Linux)"
+        description: "App name "
         required: true
+        default: "微博"
       icon:
-        description: "Icon URL, auto-fetch if empty"
+        description: "Icon URL(optional)"
         required: false
       width:
         description: "Window width (px)"
