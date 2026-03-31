@@ -151,8 +151,9 @@ jobs:
             $args += "--hide-title-bar"
           }
 
-          $args += "--bundles", "nsis"
-          
+          # 指定打包为 NSIS 安装程序（会产生安装向导，支持卸载）
+           $args += "--bundles", "nsis"
+    
           Write-Host "Running: node dist/cli.js $($args -join ' ')"
           node dist/cli.js $args
 
