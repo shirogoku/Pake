@@ -10,11 +10,11 @@ on:
       url:
         description: "Website URL"
         required: true
-        default: "https://weibo.com"
+        default: "https://www.missevan.com"
       name:
         description: "App name "
         required: true
-        default: "微博"
+        default: "猫耳FM"
       icon:
         description: "Icon URL(optional)"
         required: false
