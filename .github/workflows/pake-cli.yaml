@@ -186,8 +186,10 @@ jobs:
         if: runner.os == 'Windows'
         uses: actions/upload-artifact@v6
         with:
-          name: ${{ inputs.name }}-Windows-Setup
-          path: src-tauri/target/release/bundle/nsis/*.exe
+          name: ${{ inputs.name }}-Windows
+          path: |
+            **/pake-*.exe
+            **/release/*.exe
           retention-days: 3
           if-no-files-found: error
 
