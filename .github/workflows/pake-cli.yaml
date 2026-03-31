@@ -189,11 +189,11 @@ jobs:
         if: runner.os == 'Windows'
         uses: actions/upload-artifact@v6
         with:
-          name: ${{ inputs.name }}-Windows
+          name: ${{ inputs.name }}-Windows-Setup
           path: |
-            *.exe
-            *.nsis
-            **/*.exe
+            ./**/*.exe
+            !./**/*.exe~
+            !./**/*.pdb
           retention-days: 3
           if-no-files-found: error
 
